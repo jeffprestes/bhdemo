@@ -1,2 +1,2 @@
-# bhdemo
+# BH Demo
 Demo for Battlehack
