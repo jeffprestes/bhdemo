@@ -1,3 +1,9 @@
+<?php
+require 'vendor/autoload.php';
+require 'braintree-credentials.php';
+
+$clientToken = Braintree_ClientToken::generate();
+?>
 <html>
 	<head>
 		<title>My Fast Shop with PHP & Braintree</title>
@@ -23,5 +29,11 @@
 			<br /><br />
 			<div id="divButton"><input type="submit" value="It's only $100" /></div>
 		</form>
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+<script>
+	braintree.setup(	'<?=$clientToken?>',
+				'dropin',
+				{ container : 'divCheckout'});
+</script>
 	</body>
 </html>
